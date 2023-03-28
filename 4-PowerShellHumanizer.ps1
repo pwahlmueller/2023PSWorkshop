@@ -38,21 +38,21 @@ Get-Command -Module PowerShellHumanizer |  select Humanized, Name
 
 ## Strings
 
-'the true ninja doesn´t make a splash at all'.ToTitleCase()
+'we love powershell'.ToTitleCase()
 
-'Knowing when to leave requires training'.Underscore()
+'21.Juni - Experts Live Konferenz Au'.Underscore()
 
-'If they think first place is the winner, then they don´t know a ninja.'.Truncate(4, 'Words')
-
-'I mean, we´re ninjas.'.Dehumanize()
+'Experts Live ist die beste Konferenz. Es gibt Tracks zu Security, Azure and Hybrid Themen.'.Truncate(6, 'Words')
 
 ## Date
 
-(Get-date).Humanize()
+(get-date '2023-07-21').Humanize()
 
 $output = (get-date) - ((get-date).AddMinutes(-5))
 
 $output
+
+Get-ChildItem  # -> show in other terminal without PSHumanizer
 
 Remove-Module Powershellhumanizer
 
@@ -60,4 +60,3 @@ $output
 
 ## FileSytem Format
 
-Get-ChildItem  # -> show in other terminal without PSHumanizer
